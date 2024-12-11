@@ -1,50 +1,55 @@
-# React + TypeScript + Vite
+# Detecção de Bordas com WebGPU e Filtro de Sobel
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de detecção de bordas em imagens utilizando a tecnologia **WebGPU** e o **filtro de Sobel**. A aplicação permite que os usuários carreguem uma imagem, a qual é processada para realçar as bordas usando algoritmos eficientes executados na GPU.
 
-Currently, two official plugins are available:
+![Exemplo de Detecção de Bordas](./src/assets/demo-image.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React**: Framework para construção de interfaces modernas e reativas.
+- **TypeScript**: Superset do JavaScript, adicionando tipagem estática ao projeto.
+- **WebGPU**: API moderna de gráficos e computação para execução direta na GPU.
+- **WGSL**: Linguagem de shaders usada em WebGPU para cálculos paralelos.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Funcionalidades
+
+1. **Upload de Imagens**:
+   - O usuário pode carregar uma imagem diretamente do dispositivo.
+
+2. **Processamento de Bordas**:
+   - A imagem é processada utilizando o filtro de Sobel, implementado em **WGSL** e executado com **WebGPU**.
+
+3. **Visualização em Tempo Real**:
+   - Exibição da imagem original e da imagem processada no navegador.
+
+4. **Responsividade**:
+   - Interface amigável e responsiva para diferentes tamanhos de tela.
+
+---
+## 🖥️ Pré-requisitos
+- Certifique-se de que seu ambiente suporta WebGPU:
+- Navegadores suportados: Chrome (com a flag chrome://flags/#enable-unsafe-webgpu) ou Edge.
+- Node.js (versão >= 20).
+
+## 🔧 Como Executar
+
+Instale as dependências:
+
+```bash
+yarn
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Inicie o servidor de desenvolvimento:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+yarn dev
 ```
+
+Acesse a aplicação: Abra o navegador em http://localhost:5173/.
+
+## 🤝 Contribuições
+Contribuições são bem-vindas! Se você tiver sugestões ou melhorias, sinta-se à vontade para abrir uma issue ou enviar um pull request.

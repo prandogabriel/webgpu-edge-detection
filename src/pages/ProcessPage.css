@@ -1,33 +1,70 @@
 .process-page {
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto;
   padding: 20px;
-  background: #fff;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
   color: #333;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.processed-image {
-  width: 100%;
-  max-height: 400px;
+.process-page h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.processed-canvas {
+  max-width: 100%;
+  max-height: 70vh;
   object-fit: contain;
-  border-radius: 10px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-button {
-  background: #007bff;
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.spinner {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #007bff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+.back-button {
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   margin-top: 20px;
   border-radius: 5px;
+  border: none;
   font-size: 16px;
   cursor: pointer;
-  border: none;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background: #0056b3;
+.back-button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

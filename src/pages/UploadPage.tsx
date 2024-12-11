@@ -29,8 +29,8 @@ const UploadPage: React.FC = () => {
   return (
     <div className="upload-page">
       <header className="upload-header">
-        <h1>Detecção de Bordas</h1>
-        <p>Carregue uma imagem para aplicar a detecção de bordas. Abaixo está uma imagem de exemplo.</p>
+        <h1>Detecção de Bordas com WebGPU utilizando Filtro de Sobel</h1>
+        <p>Carregue uma imagem para aplicar a detecção de bordas usando a tecnologia WebGPU e o filtro de Sobel. Abaixo está uma imagem de exemplo.</p>
       </header>
 
       <div className="image-display">

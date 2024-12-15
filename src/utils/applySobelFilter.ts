@@ -2,6 +2,8 @@
 
 export async function applySobelFilter(inputImage: ImageData): Promise<ImageData> {
   if (!navigator.gpu) {
+    alert('WebGPU não é suportado pelo navegador. \n Por favor, verifique se a API WebGPU é compatível com seu navegador e se está habilitada no navegador.');
+    window.location.href = '/webgpu-edge-detection'
     throw new Error('WebGPU não é suportado pelo navegador.');
   }
   
@@ -9,6 +11,7 @@ export async function applySobelFilter(inputImage: ImageData): Promise<ImageData
   const device = await adapter?.requestDevice();
   if (!device) {
     alert('Falha ao obter o dispositivo WebGPU. \n Por favor, verifique se a API WebGPU está habilitada no navegador.');
+    window.location.href = '/webgpu-edge-detection'
     throw new Error('Falha ao obter o dispositivo WebGPU.');
   }
 
@@ -42,7 +45,7 @@ export async function applySobelFilter(inputImage: ImageData): Promise<ImageData
   uniformBuffer.unmap();
 
   const shaderModule = device.createShaderModule({
-    code: await fetch('/shaders/sobel.wgsl').then((res) => res.text()),
+    code: await fetch('/webgpu-edge-detection/shaders/sobel.wgsl').then((res) => res.text()),
   });
 
   const bindGroupLayout = device.createBindGroupLayout({

@@ -8,7 +8,8 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/" element={<UploadPage />} />
-        <Route path="/process" element={<ProcessPage />} />
+        <Route path="/webgpu-edge-detection/" element={<UploadPage />} />
+        <Route path="/webgpu-edge-detection/process" element={<ProcessPage />} />
       </Routes>
     </Router>
   );

@@ -20,7 +20,7 @@ const UploadPage: React.FC = () => {
 
   const handleUpload = () => {
     if (selectedFile) {
-      navigate('/process', { state: { file: selectedFile } });
+      navigate('/webgpu-edge-detection/process', { state: { file: selectedFile } });
     } else {
       alert('Por favor, selecione uma imagem.');
     }

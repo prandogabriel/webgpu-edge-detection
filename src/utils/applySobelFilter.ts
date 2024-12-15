@@ -4,10 +4,11 @@ export async function applySobelFilter(inputImage: ImageData): Promise<ImageData
   if (!navigator.gpu) {
     throw new Error('WebGPU não é suportado pelo navegador.');
   }
-
+  
   const adapter = await navigator.gpu.requestAdapter();
   const device = await adapter?.requestDevice();
   if (!device) {
+    alert('Falha ao obter o dispositivo WebGPU. \n Por favor, verifique se a API WebGPU está habilitada no navegador.');
     throw new Error('Falha ao obter o dispositivo WebGPU.');
   }
 
